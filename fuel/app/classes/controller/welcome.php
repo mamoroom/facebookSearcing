@@ -30,7 +30,16 @@ class Controller_Welcome extends Controller
 	 */
 	public function action_index()
 	{
-		return Response::forge(View::forge('welcome/index'));
+		// 内部で$userインスタンスを作成
+		$users_provider = \Auth_Opauth_Login::get_login_users_provider();
+		if (empty($users_provider)) {
+			// login画面へ
+			return Response::redirect('user/login');
+		}
+		//本当は使うものだけ取り出すべきだがphpよくわかってないので
+
+		$data = $users_provider;
+		return Response::forge(View::forge('welcome/index', $data));
 	}
 
 	/**
