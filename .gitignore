@@ -14,5 +14,9 @@ build
 /fuel/app/logs/*/*/*
 /fuel/app/cache/*/*
 /fuel/app/config/crypt.php
+/fuel/app/config/opauth.php
+/fuel/app/config/simpleauth.php
+/fuel/app/config/db.php
+/fuel/app/config/development/db.php
 nbproject/
 
